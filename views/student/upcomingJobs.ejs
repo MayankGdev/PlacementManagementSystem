@@ -1,0 +1,45 @@
+<%-include('../include/student-header',{studentName:studentName,pageTitle:pageTitle})-%>
+<div class="content-wrapper" style="padding-left: 180px;">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+<center><h1 class="my-2">Upcoming Drives</h1>
+
+
+<div class="container mt-5">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Job Title</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Experince</th>
+            <th scope="col">Interview Date</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+       
+        <tbody>
+          <% if(jobs.length!=0){jobs.forEach(job=>{%>
+            <tr>
+     
+                <td><%=job.title%></td>
+                <td><%=job.salary%></td>
+                <td><%=job.experience%></td>
+                <td><%=job.applyBy%></td>
+             <td><a href="/jobView/<%=job._id%>"><i class="fa fa-eye" aria-hidden="true"></i></a>
+            </td>
+              </tr>
+        
+        <%});}else{%>
+      <center><h4>no records found</h4></center>
+            <%}%>
+          </tbody>
+      </table>
+    
+</center>
+        </div>
+        </div>
+  </div>
+</div>
+
+<%-include('../include/student-footer')-%>

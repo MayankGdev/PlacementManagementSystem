@@ -1,0 +1,65 @@
+<%-include('../include/admin-header',{pageTitle:pageTitle,adminEmail:adminEmail})-%>
+<center>
+  <div class="content-wrapper" style="padding-left: 180px;">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="my-2"><u>Company Info</u></h1>
+  <div class="container  mb-5 py-2 text-white" style="width: 50%; border-radius:3%;background: linear-gradient(to right, #C2C5CC 0%, #7e7e7e 100%);">
+    
+    
+    <h2><%=company[0].companyId.name%></h2>
+    <div><h4><%=company[0].companyId.email%></h4></div>
+    <h4><%=company[0].companyId.phone%></h4>
+    <h3>Address</h3>
+    <h4><%=company[0].companyId.address.addressLineOne%> 
+    <%=company[0].companyId.address.addressLineTwo%>
+    <%=company[0].companyId.address.landmark%>
+    <%=company[0].companyId.address.city%>
+    <%=company[0].companyId.address.state%>
+    <%=company[0].companyId.address.pincode%></h4>
+
+      
+    </div>
+
+    
+    <div class="conatiner">
+        <h3>Job list</h3>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Job title</th>
+               
+                <th scope="col">type</th>
+               
+                <th scope="col">Interview Date</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <% if(company.length!=0){company.forEach(company=>{%>
+            <tbody>
+            
+                <tr>
+         
+                    <td><%=company.title%></td>
+                   
+                    <td><%=company.type%></td>
+                 
+                    <td><%=company.interviewDate%></td>
+                 <td><a href="/jobs/<%=company._id%>"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                </td>
+                  </tr>
+            </tbody>
+            <%});}else{%>
+          <h4>no records found</h4>
+                <%}%>
+                
+          </table>
+    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</center>
+<%-include('../include/admin-footer')-%>

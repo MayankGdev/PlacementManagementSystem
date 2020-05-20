@@ -1,0 +1,100 @@
+<%-include('../include/admin-header',{pageTitle:pageTitle,adminEmail:adminEmail})-%>
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+      
+        <!-- Icon Cards-->
+          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+              <div class="inforide">
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone">
+                      <img src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620">
+                  </div>
+                  <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                      <h4>Total Companies</h4>
+                      <h2><%=companiesCount%></h2>
+                  </div>
+                </div>
+              </div>
+          </div>
+      
+          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+              <div class="inforide">
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridetwo">
+                      <img src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620">
+                  </div>
+                  <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                      <h4>Total Jobs</h4>
+                      <h2><%=jobsCount%></h2>
+                  </div>
+                </div>
+              </div>
+          </div>
+      
+          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+              <div class="inforide">
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridethree">
+                      <img src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620">
+                  </div>
+                  <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                      <h4>Total Students</h4>
+                      <h2><%=studentsCount%></h2>
+                  </div>
+                </div>
+              </div>
+          </div>
+      
+      </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row tableDiv">
+          <div class="col-6">
+          <div class="card text-center" style="width: 28rem; min-height: 21rem;">
+            <div class="card-body">
+                <table class="table">
+                    <thead class="table-danger"><th colspan="2">Partner Compnies</th></thead>
+                    <tr class="table-primary">
+                      <th>Company Name</th>
+                      <th>Email</th>
+                    </tr>
+                    <% for (const data of companyData) { %>
+                      <tr class="table-success">
+                        <td class="texr-center"><%= data.name%></td>
+                        <td class="texr-center"><%=data.email%></td>
+                      </tr>
+                      <tr>
+                        
+                      </tr>
+                    <% } %>
+                  </table>
+              <a href="/adminReports" class="btn btn-primary">View more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card text-center" style="width: 28rem; min-height: 21rem;">
+            <div class="card-body">
+                <table class="table">
+                    <thead class="table-danger"><th colspan="2">Pending Students</th></thead>
+                    <tr class="table-primary">
+                      <th>Name</th>
+                      <th>Course</th>
+                    </tr>
+                    <% for (const student of pendingStud) { %>
+                      <tr class="table-success">
+                        <td class="texr-center"><%= student.name%></td>
+                        <td class="text-center"><%= student.course%></td>
+                      </tr>
+                    <% } %>
+                  </table>
+              <a href="/pendingstudentList" class="btn btn-primary">View more</a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+</div>
+    
+<%-include('../include/admin-footer')-%>

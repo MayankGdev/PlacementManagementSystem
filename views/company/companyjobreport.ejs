@@ -1,0 +1,77 @@
+<%-include('../include/company-header',{pageTitle:pageTitle,compEmail : compEmail})-%>
+
+  
+    <h1 class="my-2"style="margin-left: 500px;"><u>Vacancy</u></h1>
+
+ 
+    
+    <div class="container">
+      <div class="row">
+           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                  <div class="row">
+                      <center>
+                      <div class="card  text-white bg-dark   border-dark my-3" style="margin-left: 340px; width:75%;">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border-radius: 16px;">
+                          <div class="well profile col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                 
+                                  <h5 style="text-align:center;font-size: 2rem;"><strong id="user-name"><%=jobDetails.title%></strong></h5>
+                                  <p style="text-align:center;font-size: 1.5rem;" id="user-frid"><%=jobDetails.description%> </p>
+                                
+                                      <p style="text-align:center;font-size: 1.5rem;" id="user-frid">Type : <%=jobDetails.type%> </p>
+                                 
+                                      <p style="text-align:center;font-size: 1.5rem;" id="user-frid">Salary : <%=jobDetails.salary%> </p>
+                                   
+   
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divider text-center"></div>
+        
+                                  <p style="text-align:center;font-size: 1.5rem;" id="user-role">Experience Required: <%=jobDetails.experience%></p>
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divider text-center"></div>
+                                     
+                                     
+                                </div>
+                          </div>
+                       </div>
+                  </div>
+              </center>
+  
+              </div>
+          </div>
+       </div>    
+  </div>
+  <center>
+    <h2 style="margin-left: 300px;"><u>Applied Students</u></h2>
+    <div class="container" style="margin-left: 180px;">
+    <table class="table table-hover" >
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Student Name</th>
+            <th scope="col">Applied Date</th>
+            <th scope="col">Course</th>
+            <th scope="col">Selected</th>
+          </tr>
+        </thead>
+        <%if(enrollDetail.length!=0){ enrollDetail.forEach(enroll=>{%>
+        <tbody>
+          <tr>
+            <td><%=enroll.studentID.name%></td>
+            <td><%=enroll.appliedOn%></td>
+            <td><%=enroll.studentID.course%></td>
+            <% if(enroll.selected==true){%>
+                <td>Yes</td>
+            <%}else{%>
+                <td>No</td>
+            <%}%>
+          </tr>
+        </tbody>
+        <%})}else{%>
+            <h4>No students Enrolled in this vacancy</h4>
+            <%}%>
+      </table>
+    </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</center>
+<%-include('../include/company-footer')-%>

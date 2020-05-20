@@ -1,0 +1,41 @@
+<%-include('../include/student-header',{studentName:studentName,pageTitle:pageTitle})-%>
+<div class="content-wrapper" style="padding-left: 180px;">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+<center>
+  
+    <h1 class="my-2">Placement History</h1>
+
+    <div class="container mt-5">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Job Title</th>
+            <th scope="col">Applied Date</th>
+            <th scope="col">Selected</th>
+          </tr>
+        </thead>
+        <%if(enrollDetail.length!=0){ enrollDetail.forEach(enroll=>{%>
+        <tbody>
+          <tr>
+            <td><%=enroll.jobID.title%></td>
+            <td><%=enroll.appliedOn%></td>
+            <% if(enroll.selected==true){%>
+                <td>Yes</td>
+            <%}else{%>
+                <td>No</td>
+            <%}%>
+          </tr>
+        </tbody>
+        <%})}else{%>
+            <h4>Not Enrolled in any Company</h4>
+            <%}%>
+      </table>
+    </div>
+</center>
+        </div>
+      </div>
+  </div>
+</div>
+<%-include('../include/student-footer')-%>

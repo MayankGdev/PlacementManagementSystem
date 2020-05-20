@@ -1,0 +1,48 @@
+<%-include('../include/admin-header',{pageTitle:pageTitle,adminEmail:adminEmail})-%>
+<center>
+<div class="content-wrapper" style="padding-left: 180px;">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="my-2">Admin Reports</h1>
+        <h3 class="my-2">Companies</h3>
+        <div class="my-4">
+          <form action="/adminReports" method="GET">
+            <input type="text" name="search">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+
+<div class="container">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Company Name</th>
+            <th scope="col">Company Email</th>
+            <th scope="col">Company phone</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+       
+        <tbody>
+          <% if(companies.length!=0){companies.forEach(company=>{%>
+            <tr>
+     
+                <td><%=company.name%></td>
+                <td><%=company.email%></td>
+                <td><%=company.phone%></td>
+             <td><a href="/Companyview/<%=company._id%>"><i class="fa fa-eye" aria-hidden="true"></i></a>
+            </td>
+              </tr>
+        
+        <%});}else{%>
+      <center><h4>no records found</h4></center>
+            <%}%>
+          </tbody>
+      </table>
+        </div>
+      </div>
+  </div>
+</div>
+</center>
+<%-include('../include/admin-footer')-%>

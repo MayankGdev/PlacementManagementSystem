@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/39e7af8627.js" crossorigin="anonymous"></script>
+    <style>
+           .error{
+    color: red;
+    font-size: 0.9rem;
+    white-space: pre-line;
+}
+    </style>
+    <title>Company Register</title>
+</head>
+
+<body>
+<center><h1>Company Register</h1></center>
+<div class="container">
+    <div class="row justify-content-center mainWrap">
+                        <div class="col-lg-12 col-md-8">
+                            <div class="card" style="width: 60%; margin-left: 20%;">
+                                <div class="card-header">Register</div>
+                                <div class="card-body">
+    
+                                    <form class="form-horizontal" method="post" action="/companyRegister" id="compregistration">
+    
+                                        <div class="form-group">
+                                            <label for="name" class="cols-sm-2 control-label">Company Name</label>
+                                            
+                                                    <input type="text" class="form-control" name="name"  placeholder="Company Name"  />
+                                              
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="cols-sm-2 control-label">Company Email</label>
+                                                                                             
+                                                    <input type="text" class="form-control" name="email"  placeholder="Company Email" />
+                                              
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Phone" class="cols-sm-2 control-label">Company Phone No.</label>
+                                                          
+                                                    <input type="text" class="form-control" name="Phone"  placeholder="Company Phone No." />
+                                             
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password" class="cols-sm-2 control-label">Password</label>
+                                          
+                                                   
+                                                    <input type="password" class="form-control" name="password"  placeholder="Enter your Password" />
+                                             
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="address1" class="cols-sm-2 control-label">Company address.</label>
+                                          
+                                                    <input type="text" class="form-control" name="address1"  placeholder="address 1" />
+                                              
+                                        </div>   
+
+                                        <div class="form-group">
+                                            <label for="address2" class="cols-sm-2 control-label"> address 2.</label>
+                                                                                        
+                                                    <input type="text" class="form-control" name="address2"  placeholder="address 2" />
+                                       
+                                        </div>  
+                                        <div class="form-group">
+                                            <label for="landmark" class="cols-sm-2 control-label">landmark</label>
+                                                                                         
+                                                    <input type="text" class="form-control" name="landmark"  placeholder="landmark" />
+                                           
+                                        </div>  
+                                        <div class="form-group">
+                                            <label for="city" class="cols-sm-2 control-label">city</label>
+                                                                                            
+                                                    <input type="text" class="form-control" name="city"  placeholder="city" />
+                                           
+                                        </div>  
+                                        <div class="form-group">
+                                            <label for="state" class="cols-sm-2 control-label">state</label>
+                                                                                            
+                                                    <input type="text" class="form-control" name="state"  placeholder="state" />
+                                           
+                                        </div>  
+                                        <div class="form-group">
+                                            <label for="pincode" class="cols-sm-2 control-label">pincode</label>
+                                                                                  
+                                                    <input type="text" class="form-control" name="pincode"  placeholder="pincode" />
+                                     
+                                        </div>  
+                                        <div class="form-group " style="text-align: center;">
+                                            <button type="submit" class="btn btn-primary btn-lg login-button">Register</button>
+                                        </div>
+                                       
+                                    </form>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    </div>
+<%-include('../include/auth-footer')-%>

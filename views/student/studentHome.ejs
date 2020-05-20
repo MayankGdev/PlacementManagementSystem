@@ -1,0 +1,64 @@
+<%- include('../include/student-header',{studentName:studentName.name,pageTitle:pageTitle});-%>
+<div class="content-wrapper" style="padding-left: 100px;">
+<div class="container-fluid">
+  <div class=row>
+    <div class="col-12">
+      <div class="card bg-light mb-3" style="max-width: 78rem;">
+        <div class="card-header">Welcome,</div>
+        <div class="card-body">
+          <h5 class="card-title"><%=studentName.name%></h5>
+          <p class="card-text"><%=studentName.email%></p>
+          <p class="card-text"><%=studentName.phoneNo%></p>
+          <p class="card-text"><%=studentName.course%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row tableDiv">
+      <div class="col-6">
+      <div class="card text-center" style="width: 28rem;">
+        <div class="card-body">
+          <table class="table">
+            <thead class="table-danger"><th colspan="2">Upcoming Jobs</th></thead>
+            <tr class="table-primary">
+              <th>Job Title</th>
+              <th>Date</th>
+            </tr>
+            <% for (const job of jobs) { %>
+              <tr class="table-success">
+                <td class="texr-center"><%= job.title%></td>
+                <td class="text-center"><%= job.interviewDate%></td>
+              </tr>
+            <% } %>
+          </table>
+          <a href="/upcomingJobs" class="btn btn-primary">View more</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card text-center" style="width: 28rem;">
+        <div class="card-body">
+          <table class="table">
+            <thead class="table-danger"><th colspan="2">Enrolled Jobs</th></thead>
+            <tr class="table-primary">
+              <th>Job Title</th>
+              <th>Applied On</th>
+            </tr>
+            <% for (const data of enroll) { %>
+              <tr class="table-success">
+                <td class="text-center"><%=data.jobID.title%></td>
+                <td class="text-center"><%=data.appliedOn%></td>
+              </tr>
+              <tr>
+                
+              </tr>
+            <% } %>
+          </table>
+          <a href="/studentPlacementHistory" class="btn btn-primary">View more</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<%- include('../include/student-footer'); -%>

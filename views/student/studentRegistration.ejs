@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/39e7af8627.js" crossorigin="anonymous"></script>
+
+    <title>Student Register</title>
+<style>
+    .error{
+    color: red;
+    font-size: 0.9rem;
+    white-space: pre-line;
+}
+</style>
+</head>
+
+<body>
+<center><h1>Student Register</h1></center>
+<div class="container">
+    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">Register</div>
+                                <div class="card-body">
+    
+                                    <form class="form-horizontal" method="post" action="/studentRegister" id="studregistration">
+                                        <div class="form-group">
+                                            <label for="Rollno" class="cols-sm-2 control-label">Student Rollno</label>
+                                            <input type="text" class="form-control" name="Rollno"  placeholder="Student Rollno"  />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name" class="cols-sm-2 control-label">Student Name</label>
+                                            <input type="text" class="form-control" name="name"  placeholder="Student Name"  />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="cols-sm-2 control-label">Student Email</label>
+                                                                                             
+                                                    <input type="text" class="form-control" name="email"  placeholder="Student Email" />
+                                              
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <label for="image" class="cols-sm-2 control-label">Company Logo</label>
+                                            <div class="cols-sm-10">
+                                                <div class="input-group">                  
+                                                    <input type="file" class="form-control" name="image"/>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="form-group">
+                                            <label for="Phone" class="cols-sm-2 control-label">Student Mobile No.</label>
+                                                             
+                                                    <input type="text" class="form-control" name="Phone"  placeholder="Student Mobile No." />
+                                              
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Gender" class="cols-sm-2 control-label">Gender</label>
+                                                          
+                                                    <input type="radio" id="male" name="gender" value="true">
+                                                    <label for="male">Male</label>
+                                                    <input type="radio" id="female" name="gender" value="false" >
+                                                    <label for="female">Female</label>
+                                             
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Course" class="cols-sm-2 control-label">Course</label>
+                                                            
+                                                    <input type="text" class="form-control" name="Course"  placeholder="Course" />
+                                               
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Semester" class="cols-sm-2 control-label">Semester</label>
+                                                          
+                                                    <input type="text" class="form-control" name="Semester"  placeholder="Semester" />
+                                             
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password" class="cols-sm-2 control-label">Password</label>
+                                            
+                                                    <input type="password" class="form-control" name="password"  placeholder="Enter your Password" />
+                                             
+                                        </div>
+
+                                    
+                                       
+                                      <center><div class="form-group ">
+                                            <button type="submit" class="btn btn-primary btn-lg  login-button">Register</button>
+                                        </div>
+                                    </center>
+                                        
+                                    </form>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+    </div>
+<%-include('../include/auth-footer')-%>
